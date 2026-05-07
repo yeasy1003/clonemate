@@ -1,0 +1,11 @@
+slug: zhangsan
+identity:
+  open_id: ou_xxxxxxxxxxxxxxxx
+  app_id: cli_xxxxxxxxxxxxxxxx
+display_name: 张三
+profile: claude-code
+sources_enabled:
+  contact: true
+  im_1v1: true
+window:
+  default_since: 180d

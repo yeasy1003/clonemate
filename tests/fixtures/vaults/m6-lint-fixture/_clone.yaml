@@ -1,0 +1,6 @@
+slug: zhangsan
+identity:
+  open_id: ou_xxxxxxxxxxxxxxxx
+  app_id: cli_xxxxxxxxxxxxxxxx
+display_name: 张三
+profile: claude-code

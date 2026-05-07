@@ -1,0 +1,26 @@
+# {{ display_name }} 的 CloneMate Vault
+
+slug:`{{ slug }}`
+
+本 vault 由 [clonemate skill](https://github.com/yeasy1003/clonemate) 维护。
+
+## 红线(写在 vault 里方便 Claude 任何时刻 retrieve)
+
+1. 采集严格继承调用方 Lark 权限,不调任何提权接口;`lark-cli` 必须以 `user` identity 跑
+2. calendar 仅取 summary / time / participants,不取 description / 附件
+3. vault 永不出本地,禁止 push;`pre-push hook` 已安装拦截
+4. forget 即真删:raw 不在 git,Level2 走 git filter-repo 改写历史
+5. 事实正确 > 风格化:voice transfer 只重写措辞,不添加 ta 没说过的观点
+6. 作者归属:voice/persona 仅取 `author == target`,他人言论作 entity 协作画像
+
+## 目录约定
+
+- `raw/` — 只读真值源,**不入 git**
+- `wiki/` — LLM 维护的 markdown 页面
+- `index.md` — 内容索引
+- `log.md` — 时间线 append-only
+- `_clone.yaml` — 身份锁(open_id + app_id 双键)
+
+## 工作流入口
+
+详见 skill 仓库 `references/workflow-*.md`。

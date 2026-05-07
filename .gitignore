@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+build/
+dist/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Vault data — runtime vaults live in ~/files/clonemate/ (outside repo by design).
+# These patterns defend against accidentally placing a vault inside the repo tree.
+# Note: git does NOT expand ~ in .gitignore, so a ~/foo pattern would be a no-op.
+files/clonemate/
+clonemate-vault/
+
+# Internal design docs (superpowers plans / specs). Kept locally for reference,
+# excluded from the open-source tree to avoid leaking internal URLs / paths.
+docs/superpowers/

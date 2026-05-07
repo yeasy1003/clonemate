@@ -1,0 +1,26 @@
+name: ci
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.10" }
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: mypy scripts/clonemate || true   # M1 不强制 strict;后续 milestone 收紧
+      - run: python -m clonemate.sanitize_check .
+
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.10" }
+      - run: pip install -e ".[dev]"
+      - run: pytest tests/unit -q
